@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9031C6C222996840078AB4A /* BluetoothInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9031C6B222996840078AB4A /* BluetoothInterface.swift */; };
 		C907D3A82228AEA100B3060F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C907D3A62228AEA100B3060F /* Main.storyboard */; };
 		C907D3AA2228AEA100B3060F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C907D3A92228AEA100B3060F /* Assets.xcassets */; };
 		C907D3AD2228AEA100B3060F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C907D3AB2228AEA100B3060F /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9031C6B222996840078AB4A /* BluetoothInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothInterface.swift; sourceTree = "<group>"; };
 		C907D39F2228AEA100B3060F /* Rc-Car-Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rc-Car-Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C907D3A72228AEA100B3060F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C907D3A92228AEA100B3060F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				C907D3A92228AEA100B3060F /* Assets.xcassets */,
 				C907D3AB2228AEA100B3060F /* LaunchScreen.storyboard */,
 				C907D3AE2228AEA100B3060F /* Info.plist */,
+				C9031C6B222996840078AB4A /* BluetoothInterface.swift */,
 			);
 			path = "Rc-Car-Controller";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				C907D3DF2228AECE00B3060F /* AnalogJoystick.swift in Sources */,
 				C907D3DD2228AECE00B3060F /* RcCarViewController.swift in Sources */,
 				C907D3DB2228AECE00B3060F /* AppDelegate.swift in Sources */,
+				C9031C6C222996840078AB4A /* BluetoothInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

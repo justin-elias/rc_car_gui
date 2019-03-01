@@ -1,16 +1,16 @@
 //
 //  GameScene.swift
 //
-//  Created by Dmitriy Mitrophanskiy on 28.09.14.
-//  Copyright (c) 2014 Dmitriy Mitrophanskiy. All rights reserved.
-//
+//  Created by Justin Elias on 3/1/19.
+//  Adapted from Dmitriy Mitrophanskiy https://github.com/MitrophD/Swift-SpriteKit-Analog-Stick
+//  Copyright © 2019 Justin Elias. All rights reserved.//
 import SpriteKit
 
 
 class GameScene: SKScene {
     let deviceNameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     var appleNode: SKSpriteNode?
-    var peripheral: RcCarViewController?
+    var peripheral: BluetoothInterface?
     var moving = false
     
     
@@ -158,7 +158,7 @@ class GameScene: SKScene {
         self.view!.addSubview(self.deviceNameLabel)
     }
     
-    func setPeripheral(value: RcCarViewController?){
+    func setPeripheral(value: BluetoothInterface?){
         
         self.peripheral = value
     }
