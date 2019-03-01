@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Rc-Car-Controller
+//  test_ble
 //
-//  Created by Justin Elias on 2/28/19.
+//  Created by Justin Elias on 2/26/19.
 //  Copyright © 2019 Justin Elias. All rights reserved.
 //
 

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C907D3A32228AEA100B3060F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3A22228AEA100B3060F /* AppDelegate.swift */; };
-		C907D3A52228AEA100B3060F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3A42228AEA100B3060F /* ViewController.swift */; };
 		C907D3A82228AEA100B3060F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C907D3A62228AEA100B3060F /* Main.storyboard */; };
 		C907D3AA2228AEA100B3060F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C907D3A92228AEA100B3060F /* Assets.xcassets */; };
 		C907D3AD2228AEA100B3060F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C907D3AB2228AEA100B3060F /* LaunchScreen.storyboard */; };
 		C907D3B82228AEA200B3060F /* Rc_Car_ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3B72228AEA200B3060F /* Rc_Car_ControllerTests.swift */; };
 		C907D3C32228AEA200B3060F /* Rc_Car_ControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3C22228AEA200B3060F /* Rc_Car_ControllerUITests.swift */; };
+		C907D3D92228AECE00B3060F /* jStick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D02228AECD00B3060F /* jStick@2x.png */; };
+		C907D3DA2228AECE00B3060F /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D12228AECD00B3060F /* apple.png */; };
+		C907D3DB2228AECE00B3060F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D22228AECD00B3060F /* AppDelegate.swift */; };
+		C907D3DC2228AECE00B3060F /* jSubstrate.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D32228AECE00B3060F /* jSubstrate.png */; };
+		C907D3DD2228AECE00B3060F /* RcCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D42228AECE00B3060F /* RcCarViewController.swift */; };
+		C907D3DE2228AECE00B3060F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D52228AECE00B3060F /* GameScene.swift */; };
+		C907D3DF2228AECE00B3060F /* AnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D62228AECE00B3060F /* AnalogJoystick.swift */; };
+		C907D3E02228AECE00B3060F /* jStick.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D72228AECE00B3060F /* jStick.png */; };
+		C907D3E12228AECE00B3060F /* jSubstrate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D82228AECE00B3060F /* jSubstrate@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +42,23 @@
 
 /* Begin PBXFileReference section */
 		C907D39F2228AEA100B3060F /* Rc-Car-Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rc-Car-Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C907D3A22228AEA100B3060F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C907D3A42228AEA100B3060F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C907D3A72228AEA100B3060F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C907D3A92228AEA100B3060F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C907D3AC2228AEA100B3060F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C907D3AE2228AEA100B3060F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C907D3B32228AEA200B3060F /* Rc-Car-ControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rc-Car-ControllerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C907D3B72228AEA200B3060F /* Rc_Car_ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc_Car_ControllerTests.swift; sourceTree = "<group>"; };
-		C907D3B92228AEA200B3060F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C907D3BE2228AEA200B3060F /* Rc-Car-ControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rc-Car-ControllerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C907D3C22228AEA200B3060F /* Rc_Car_ControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc_Car_ControllerUITests.swift; sourceTree = "<group>"; };
-		C907D3C42228AEA200B3060F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C907D3D02228AECD00B3060F /* jStick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jStick@2x.png"; sourceTree = "<group>"; };
+		C907D3D12228AECD00B3060F /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
+		C907D3D22228AECD00B3060F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C907D3D32228AECE00B3060F /* jSubstrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jSubstrate.png; sourceTree = "<group>"; };
+		C907D3D42228AECE00B3060F /* RcCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RcCarViewController.swift; sourceTree = "<group>"; };
+		C907D3D52228AECE00B3060F /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C907D3D62228AECE00B3060F /* AnalogJoystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogJoystick.swift; sourceTree = "<group>"; };
+		C907D3D72228AECE00B3060F /* jStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jStick.png; sourceTree = "<group>"; };
+		C907D3D82228AECE00B3060F /* jSubstrate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jSubstrate@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +109,15 @@
 		C907D3A12228AEA100B3060F /* Rc-Car-Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C907D3A22228AEA100B3060F /* AppDelegate.swift */,
-				C907D3A42228AEA100B3060F /* ViewController.swift */,
+				C907D3D62228AECE00B3060F /* AnalogJoystick.swift */,
+				C907D3D22228AECD00B3060F /* AppDelegate.swift */,
+				C907D3D12228AECD00B3060F /* apple.png */,
+				C907D3D52228AECE00B3060F /* GameScene.swift */,
+				C907D3D72228AECE00B3060F /* jStick.png */,
+				C907D3D02228AECD00B3060F /* jStick@2x.png */,
+				C907D3D32228AECE00B3060F /* jSubstrate.png */,
+				C907D3D82228AECE00B3060F /* jSubstrate@2x.png */,
+				C907D3D42228AECE00B3060F /* RcCarViewController.swift */,
 				C907D3A62228AEA100B3060F /* Main.storyboard */,
 				C907D3A92228AEA100B3060F /* Assets.xcassets */,
 				C907D3AB2228AEA100B3060F /* LaunchScreen.storyboard */,
@@ -111,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				C907D3B72228AEA200B3060F /* Rc_Car_ControllerTests.swift */,
-				C907D3B92228AEA200B3060F /* Info.plist */,
 			);
 			path = "Rc-Car-ControllerTests";
 			sourceTree = "<group>";
@@ -120,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				C907D3C22228AEA200B3060F /* Rc_Car_ControllerUITests.swift */,
-				C907D3C42228AEA200B3060F /* Info.plist */,
 			);
 			path = "Rc-Car-ControllerUITests";
 			sourceTree = "<group>";
@@ -193,6 +210,7 @@
 				TargetAttributes = {
 					C907D39E2228AEA100B3060F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					C907D3B22228AEA200B3060F = {
 						CreatedOnToolsVersion = 10.1;
@@ -231,7 +249,12 @@
 			files = (
 				C907D3AD2228AEA100B3060F /* LaunchScreen.storyboard in Resources */,
 				C907D3AA2228AEA100B3060F /* Assets.xcassets in Resources */,
+				C907D3E02228AECE00B3060F /* jStick.png in Resources */,
+				C907D3D92228AECE00B3060F /* jStick@2x.png in Resources */,
 				C907D3A82228AEA100B3060F /* Main.storyboard in Resources */,
+				C907D3E12228AECE00B3060F /* jSubstrate@2x.png in Resources */,
+				C907D3DC2228AECE00B3060F /* jSubstrate.png in Resources */,
+				C907D3DA2228AECE00B3060F /* apple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C907D3A52228AEA100B3060F /* ViewController.swift in Sources */,
-				C907D3A32228AEA100B3060F /* AppDelegate.swift in Sources */,
+				C907D3DE2228AECE00B3060F /* GameScene.swift in Sources */,
+				C907D3DF2228AECE00B3060F /* AnalogJoystick.swift in Sources */,
+				C907D3DD2228AECE00B3060F /* RcCarViewController.swift in Sources */,
+				C907D3DB2228AECE00B3060F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W5X958CC5;
 				INFOPLIST_FILE = "Rc-Car-Controller/Info.plist";
@@ -441,6 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.egen310.f6.Rc-Car-Controller";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W5X958CC5;
 				INFOPLIST_FILE = "Rc-Car-Controller/Info.plist";
