@@ -111,8 +111,6 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         DispatchQueue.main.async { () -> Void in
             self.scene?.setDevice(value: "-----")
         }
-        
-        
         // STEP 16: in this use-case, start scanning
         // for the same peripheral or another, as long
         // as they're HRMs, to come back online

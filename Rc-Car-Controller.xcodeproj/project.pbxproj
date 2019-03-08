@@ -14,11 +14,10 @@
 		C907D3B82228AEA200B3060F /* Rc_Car_ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3B72228AEA200B3060F /* Rc_Car_ControllerTests.swift */; };
 		C907D3C32228AEA200B3060F /* Rc_Car_ControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3C22228AEA200B3060F /* Rc_Car_ControllerUITests.swift */; };
 		C907D3D92228AECE00B3060F /* jStick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D02228AECD00B3060F /* jStick@2x.png */; };
-		C907D3DA2228AECE00B3060F /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D12228AECD00B3060F /* apple.png */; };
 		C907D3DB2228AECE00B3060F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D22228AECD00B3060F /* AppDelegate.swift */; };
 		C907D3DC2228AECE00B3060F /* jSubstrate.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D32228AECE00B3060F /* jSubstrate.png */; };
 		C907D3DD2228AECE00B3060F /* RcCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D42228AECE00B3060F /* RcCarViewController.swift */; };
-		C907D3DE2228AECE00B3060F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D52228AECE00B3060F /* GameScene.swift */; };
+		C907D3DE2228AECE00B3060F /* JoystickScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D52228AECE00B3060F /* JoystickScene.swift */; };
 		C907D3DF2228AECE00B3060F /* AnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C907D3D62228AECE00B3060F /* AnalogJoystick.swift */; };
 		C907D3E02228AECE00B3060F /* jStick.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D72228AECE00B3060F /* jStick.png */; };
 		C907D3E12228AECE00B3060F /* jSubstrate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C907D3D82228AECE00B3060F /* jSubstrate@2x.png */; };
@@ -53,11 +52,10 @@
 		C907D3BE2228AEA200B3060F /* Rc-Car-ControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rc-Car-ControllerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C907D3C22228AEA200B3060F /* Rc_Car_ControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc_Car_ControllerUITests.swift; sourceTree = "<group>"; };
 		C907D3D02228AECD00B3060F /* jStick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jStick@2x.png"; sourceTree = "<group>"; };
-		C907D3D12228AECD00B3060F /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 		C907D3D22228AECD00B3060F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C907D3D32228AECE00B3060F /* jSubstrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jSubstrate.png; sourceTree = "<group>"; };
 		C907D3D42228AECE00B3060F /* RcCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RcCarViewController.swift; sourceTree = "<group>"; };
-		C907D3D52228AECE00B3060F /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		C907D3D52228AECE00B3060F /* JoystickScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickScene.swift; sourceTree = "<group>"; };
 		C907D3D62228AECE00B3060F /* AnalogJoystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalogJoystick.swift; sourceTree = "<group>"; };
 		C907D3D72228AECE00B3060F /* jStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jStick.png; sourceTree = "<group>"; };
 		C907D3D82228AECE00B3060F /* jSubstrate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jSubstrate@2x.png"; sourceTree = "<group>"; };
@@ -113,8 +111,7 @@
 			children = (
 				C907D3D62228AECE00B3060F /* AnalogJoystick.swift */,
 				C907D3D22228AECD00B3060F /* AppDelegate.swift */,
-				C907D3D12228AECD00B3060F /* apple.png */,
-				C907D3D52228AECE00B3060F /* GameScene.swift */,
+				C907D3D52228AECE00B3060F /* JoystickScene.swift */,
 				C907D3D72228AECE00B3060F /* jStick.png */,
 				C907D3D02228AECD00B3060F /* jStick@2x.png */,
 				C907D3D32228AECE00B3060F /* jSubstrate.png */,
@@ -257,7 +254,6 @@
 				C907D3A82228AEA100B3060F /* Main.storyboard in Resources */,
 				C907D3E12228AECE00B3060F /* jSubstrate@2x.png in Resources */,
 				C907D3DC2228AECE00B3060F /* jSubstrate.png in Resources */,
-				C907D3DA2228AECE00B3060F /* apple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C907D3DE2228AECE00B3060F /* GameScene.swift in Sources */,
+				C907D3DE2228AECE00B3060F /* JoystickScene.swift in Sources */,
 				C907D3DF2228AECE00B3060F /* AnalogJoystick.swift in Sources */,
 				C907D3DD2228AECE00B3060F /* RcCarViewController.swift in Sources */,
 				C907D3DB2228AECE00B3060F /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  JoystickScene.swift
 //
 //  Created by Justin Elias on 3/1/19.
 //  Adapted from Dmitriy Mitrophanskiy https://github.com/MitrophD/Swift-SpriteKit-Analog-Stick
