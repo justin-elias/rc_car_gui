@@ -10,14 +10,16 @@
 import CoreBluetooth
 import UIKit
 
-let BLE_Service_CBUUID = CBUUID(string: "4fafc201-1fb5-459e-8fcc-c5c9c331914b")
-let BLE_Report_Characteristic_CBUUID = CBUUID(string: "beb5483e-36e1-4688-b7f5-ea07361b26a8")
+let BLE_Service_CBUUID = CBUUID(string: "ae563286-b114-49ae-aab3-3cc37bbfe46a")
+let BLE_Right_Track_Characteristic_CBUUID = CBUUID(string: "fc131b73-9e78-4ee6-a837-03edd24b66f9")
+let BLE_Left_Track_Characteristic_CBUUID = CBUUID(string:"e3956242-861b-4545-a006-6d3cfdc7bc2b")
 
 class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var centralManager: CBCentralManager?
     var peripheralCar: CBPeripheral?
     var rightControlCharacteristic: CBCharacteristic?
+    var leftControlCharacteristic: CBCharacteristic?
     var scene: GameScene?
     
     init(scene: GameScene) {
@@ -36,7 +38,7 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
     // manage, and collect data from peripherals
     
     func setCentralQueue() {
-        self.centralManager = CBCentralManager(delegate: self, queue: centralQueue)
+        centralManager = CBCentralManager(delegate: self, queue: centralQueue)
     }
     
     // STEP 3.1: this method is called based on
@@ -145,8 +147,12 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         for characteristic in service.characteristics! {
             print(characteristic)
             
-            if characteristic.uuid == BLE_Report_Characteristic_CBUUID {
+            if characteristic.uuid == BLE_Right_Track_Characteristic_CBUUID {
                 rightControlCharacteristic = characteristic
+            }
+            
+            if characteristic.uuid == BLE_Left_Track_Characteristic_CBUUID {
+                leftControlCharacteristic = characteristic
             }
             
         } // End for
@@ -168,13 +174,28 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         
     } // END func decodePeripheralState(peripheralState
     
-    func peripheralWrite(value: UInt8){
+    func peripheralWrite(value: UInt8, track: String){
         
         let bytes: [UInt8] = [value]
         let data = Data(bytes: bytes)
-        print(value, data)
+        let trackCharacteristic: CBCharacteristic?
+        print(value, track, data)
+        if track == "left"{
+            guard self.leftControlCharacteristic != nil
+                else {
+                    return
+            }
+            trackCharacteristic = self.leftControlCharacteristic!
+        }
+        else {
+            guard self.rightControlCharacteristic != nil
+                else {
+                    return
+            }
+            trackCharacteristic = self.rightControlCharacteristic!
+        }
         if peripheralCar != nil {
-            peripheralCar!.writeValue(data, for: self.rightControlCharacteristic!, type:
+            peripheralCar!.writeValue(data, for: trackCharacteristic!, type:
                 CBCharacteristicWriteType.withResponse)
         }
     }
