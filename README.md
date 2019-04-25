@@ -12,3 +12,7 @@ These are the files written wholly or modified by Justin Elias
     - Sets gamepad scene which shows on iPhone. Connects to gamepad if available, reads inputs and sends write signals to bluetooth device
 * JoystickScene.swift
     - Sets virtual joystick scene which shows on iPhone. Reads input from virtual joysticks and sends write signals to bluetooth device.
+    
+## In folder BLE_servo_esp32
+This is the file that was loaded onto the ESP32 microcontroller
+* BLE_servo_esp32.ino
