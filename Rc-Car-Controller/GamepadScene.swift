@@ -13,18 +13,25 @@ class GamepadScene: SKScene{
     let gearLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
     var appleNode: SKSpriteNode?
     var peripheral: BluetoothInterface?
-    var rightMovingFwd = false                 // Identify if right and left tracks are currently moving
+
+    // Variables to identify if right and left tracks are currently moving
+    var rightMovingFwd = false
     var leftMovingFwd = false
     var rightMovingRvs = false
     var leftMovingRvs = false
+
+    // Variables for reading gamepad input
     var leftThumbstickUp: GCExtendedGamepad?
     var leftThumbstickDown: GCExtendedGamepad?
     var rightThumbstickUp: GCExtendedGamepad?
     var rightThumbstickDown: GCExtendedGamepad?
+
+    // Variables for gears
     let minGear = 1
     var gear: Int?
     let maxGear = 5
 
+    // Initial setup of the scene
     override func didMove(to view: SKView) {
         /* Setup your scene here */
         backgroundColor = UIColor.white
@@ -45,6 +52,9 @@ class GamepadScene: SKScene{
         view.isMultipleTouchEnabled = true
     }
 
+    /**
+    * Set of functions which take the input of the gamepad and call the appropriate bluetooth write function
+    **/
     func gamepadJoyStick() {
         let leftThumbstickUp = self.gamepad!.leftThumbstick.up
         let leftThumbstickDown = self.gamepad!.leftThumbstick.down
@@ -75,6 +85,7 @@ class GamepadScene: SKScene{
             }
         }
 
+        // Increase gear if Left Trigger Pulled
         if leftTrigger.isPressed {
             var reset = false
             while leftTrigger.isPressed {
@@ -91,6 +102,7 @@ class GamepadScene: SKScene{
             }
         }
 
+        // Decrease gear if Right Trigger Pulled
         if rightTrigger.isPressed {
             var reset = false
             while rightTrigger.isPressed {
@@ -107,6 +119,10 @@ class GamepadScene: SKScene{
         }
     }
 
+    /**
+    * Set of functions which control the input written to the bluetooth peripheral
+    * written values are hexdecimal translation of ASCII characters. The Rc Car is set to only read these specific characters
+    **/
     func leftStop() {
         self.peripheral?.peripheralWrite(value: 0x30, track: "left")
         self.leftMovingFwd = false
@@ -138,11 +154,6 @@ class GamepadScene: SKScene{
         self.rightMovingFwd = true
         self.peripheral?.peripheralWrite(value: 0x31, track: "right")
     }
-    func setUpArrow(value: String){
-        if value == "left"{
-
-        }
-    }
 
     func changeGears(gearIn: Int){
         var nextGear: UInt8?
@@ -164,6 +175,7 @@ class GamepadScene: SKScene{
         self.setGearLabel(value: String(gearIn))
     }
 
+    // Checks if controller has been connected before frame refresh, if Controller was connected, switches to GamepadScene
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         if self.controllerConnected {
@@ -189,6 +201,7 @@ class GamepadScene: SKScene{
         NotificationCenter.default.addObserver(self, selector: #selector(GamepadScene.controllerDisconnected), name: NSNotification.Name.GCControllerDidDisconnect, object: nil)
     }
 
+    // Check if controller is connected
     @objc func connectControllers() {
 
         print(GCController.controllers().count)
@@ -201,6 +214,7 @@ class GamepadScene: SKScene{
 
     }
 
+    // Check if controller is disconnected
     @objc func controllerDisconnected() {
 
         print("Controller disconnected")
@@ -208,6 +222,7 @@ class GamepadScene: SKScene{
         self.controllerConnected = false
     }
 
+    // Set images and text on screen
     func setDevice(value: String?) {
         self.deviceNameLabel.adjustsFontSizeToFitWidth = true
         self.deviceNameLabel.center = CGPoint(x: self.frame.midX, y: 60)
@@ -222,6 +237,7 @@ class GamepadScene: SKScene{
         self.view!.addSubview(deviceLabel)
     }
 
+    // Set text of gear indicator
     func setGearLabel(value: String?){
         self.gearLabel.adjustsFontSizeToFitWidth = false
         self.gearLabel.center = CGPoint(x: self.frame.midX, y: self.frame.maxY - 220)

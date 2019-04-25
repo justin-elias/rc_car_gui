@@ -1,18 +1,24 @@
-//
-//  BluetoothInterface.swift
-//  Rc-Car-Controller
-//
-//  Created by Justin Elias on 3/1/19.
-//  Adapted from https://www.appcoda.com/core-bluetooth/
-//  Copyright © 2019 Justin Elias. All rights reserved.
-//
+/**
+* BluetoothInterface.swift
+* Rc-Car-Controller
+*
+* Created by Justin Elias on 3/1/19.
+* Adapted from https://www.appcoda.com/core-bluetooth/
+* Copyright © 2019 Justin Elias. All rights reserved.
+**/
 
 import CoreBluetooth
 import UIKit
 
+// UUIDs to look for on advertising servers. If specified, will only connect to correctly configured server
 let BLE_Service_CBUUID = CBUUID(string: "ae563286-b114-49ae-aab3-3cc37bbfe46a")
+
+//UUID of characteristics we are interested in using
 let BLE_Right_Track_Characteristic_CBUUID = CBUUID(string: "fc131b73-9e78-4ee6-a837-03edd24b66f9")
 let BLE_Left_Track_Characteristic_CBUUID = CBUUID(string:"e3956242-861b-4545-a006-6d3cfdc7bc2b")
+let BLE_Gear_Characteristic_CBUUID = CBUUID(string: "2a741394-d7f4-45de-88d2-e888f50d763e")
+
+
 
 class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
@@ -20,9 +26,10 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
     var peripheralCar: CBPeripheral?
     var rightControlCharacteristic: CBCharacteristic?
     var leftControlCharacteristic: CBCharacteristic?
-    var scene: GameScene?
+    var gearControlCharacteristic: CBCharacteristic?
+    var scene: GamepadScene?
     
-    init(scene: GameScene) {
+    init(scene: GamepadScene) {
         self.scene = scene
     }
     
@@ -152,6 +159,10 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
             if characteristic.uuid == BLE_Left_Track_Characteristic_CBUUID {
                 leftControlCharacteristic = characteristic
             }
+
+            if characteristic.uuid == BLE_Gear_Characteristic_CBUUID {
+                gearControlCharacteristic = characteristic
+            }
             
         } // End for
     } // END func peripheral(... didDiscoverCharacteristicsFor service
@@ -171,12 +182,16 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
         }
         
     } // END func decodePeripheralState(peripheralState
-    
+
+
+    /**
+    * Write to specified bluetooth characteristic on the Rc Car
+    **/
     func peripheralWrite(value: UInt8, track: String){
         
         let bytes: [UInt8] = [value]
         let data = Data(bytes: bytes)
-        let trackCharacteristic: CBCharacteristic?
+        var trackCharacteristic: CBCharacteristic?
         print(value, track, data)
         if track == "left"{
             guard self.leftControlCharacteristic != nil
@@ -185,17 +200,25 @@ class BluetoothInterface: NSObject, CBCentralManagerDelegate, CBPeripheralDelega
             }
             trackCharacteristic = self.leftControlCharacteristic!
         }
-        else {
+        else if track == "right"{
             guard self.rightControlCharacteristic != nil
                 else {
                     return
             }
             trackCharacteristic = self.rightControlCharacteristic!
         }
-        if peripheralCar != nil {
+        else if track == "gear"{
+            guard self.gearControlCharacteristic != nil
+                    else {
+                        return
+            }
+            trackCharacteristic = self.gearControlCharacteristic!
+        }
+        if peripheralCar != nil && trackCharacteristic != nil{
             peripheralCar!.writeValue(data, for: trackCharacteristic!, type:
                 CBCharacteristicWriteType.withResponse)
         }
+        print("Char:", trackCharacteristic!)
     }
     
 }
